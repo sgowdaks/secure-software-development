@@ -10,10 +10,7 @@ import pyotp
 import sqlite3
 
 
-# generating random PyOTP secret keys
-#from flaskext.mail import Mail, Message
-# from flask import Flask from flaskext.mail import Mail
-#rom flask_login import login_user, login_required, logout_user, current_user
+
 needed = "" 
 
 
