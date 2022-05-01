@@ -59,6 +59,7 @@ def signup():
         userId = request.form.get("userId")
         password2 = request.form.get("password2")
         firstName = request.form.get("firstName")
+        #user Id validation 
         response = validate_userId(userId)
         if len(password1) < 7: 
            return render_template("signup.html", error="password very short") 
@@ -89,9 +90,8 @@ def login():
     if request.method == "POST":
         userId = request.form.get("userId")
         password = request.form.get("password")
-        # print(email)
+        #user credentials validation
         user = get_user_with_credentials(userId, password)
-        # print("hello")
         if not user:
             return render_template("login.html", error="Invalid credentials")
         print(user)
@@ -106,7 +106,6 @@ def dashboard():
     if not logged_in():
         return render_template("login.html")
     name = get_name(g.user)
-    # print(g.user)
     return render_template("dashboard.html", name = g.user)
 
 @app.route("/saving_details", methods=['GET', 'POST'])
@@ -117,8 +116,6 @@ def saving_details():
         return render_template("saving_details.html", error = "error")
     else:
         res = s_account(g.user)
-        # print(c_account(g.user))
-        # print("appbalance ", balance)
         return render_template("saving_details.html", balance = res['balance'], number = res['number'])
 
 @app.route("/check_details", methods=['GET', 'POST'])
@@ -129,8 +126,6 @@ def check_details():
         return render_template("check_details.html", error = "error")
     else:
         res = c_account(g.user)
-        # print(balance, number )
-        # print("hello")
         return render_template("check_details.html", balance = res['balance'], number = res['number'])
 
 @app.route("/logout", methods=['GET'])
@@ -141,8 +136,6 @@ def logout():
 
 @app.route("/about", methods=['GET'])
 def about():
-    # if not logged_in():
-    #     return render_template("login.html")
     return render_template("about.html")
 
 
@@ -168,12 +161,9 @@ def transfer_money():
         amount = request.form.get("amount")
         if int(amount) <= 0:
             return render_template("trasfer_money.html", error = "Please slect the right amount")
-        # print(g.user)
+        #secure money trasfering
         response = verify_user_amount(source_a, amount, desti_a, target, g.user)
-        # print(response)
         if response:
-            # response = make_response(redirect("/dashboard"))
-            # return response, 303
             return render_template("trasfer_money.html", error = "Money was succesfully transferred")
         else:
             return render_template("trasfer_money.html", error = "Money trasfer failed")
