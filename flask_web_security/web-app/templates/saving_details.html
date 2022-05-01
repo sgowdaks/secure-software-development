@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}details{% endblock %} 
+{% block content %}
+{% if error %}
+<p>Sorry! you dont have a savings account</p>
+{% else %}
+<h1>Details for Saving Account {{number}}</h1>
+<p>Balance in this account: {{balance}}</p>
+{% endif %}
+<p><a href="/dashboard">Back to Dashboard</a></p>
+{% endblock %} 
