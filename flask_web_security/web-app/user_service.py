@@ -8,6 +8,7 @@ from time import sleep
 
 SECRET = 'bfg28y7efg238re7r6t32gfo23vfy7237yibdyo238do2v3'
 
+#preventing SQL injections using "?", instead of hardcoading
 def get_user_with_credentials(email, password):
     try:
         con = sqlite3.connect('user_details.db')
