@@ -1,10 +1,12 @@
-Amaze pay is a mini bank account. It allow users to signup, and login if they alredy have their account in the bank, and also allows user to transfer money, if the target has has account in amaze pay. All of these acts are carried on securly defending CSRF, SQl injection attacks in flask.
+# Amaze Pay
 
-To get started:
+### Amaze pay is a mini bank account. It allow users to signup, and login if they alredy have their account in the bank, and also allows user to transfer money, if the target has has account in amaze pay. All of these acts are carried on securly defending CSRF, SQl injection attacks in flask.
 
-create a virtual environment:: python3 -m venv env
-eneter the virtual envirnoment: . env/bin/activate
-Install four libraries: pip install Flask Flask-WTF PyJWT passlib.
-Add the environment variable: export FLASK_ENV=development (to enable automatic server restart after code changes)
+## To get started:
+
+### 1. create a virtual environment: python3 -m venv env
+### 2. eneter the virtual envirnoment: . env/bin/activate
+### 3. Install four libraries: pip install Flask Flask-WTF PyJWT passlib.
+### 4. Add the environment variable: export FLASK_ENV=development (to enable automatic server restart after code changes)
 
 
