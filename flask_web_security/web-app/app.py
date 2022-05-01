@@ -128,6 +128,7 @@ def check_details():
 @app.route("/logout", methods=['GET'])
 def logout():
     response = make_response(redirect("/dashboard"))
+    #deleting cookie once after logout
     response.delete_cookie('auth_token')
     return response, 303
 
