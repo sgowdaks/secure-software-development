@@ -22,6 +22,7 @@ def get_user_with_credentials(email, password):
             return None
         userId, name, hash = row
         if not pbkdf2_sha256.verify(password, hash):
+            #Preventing of timing attacks
             k = randint(0.1, 2)
             sleep(k)
             print("sleep time :", k)
