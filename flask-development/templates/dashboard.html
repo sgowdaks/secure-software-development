@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Sign-Up{% endblock %} 
+{% block content %}
+<h2 >Welcome to Amaze pay!</h2>
+<h4 id="demo"></h4>
+<h4>Hi {{name}}, What do you want to do today? </h4> 
+
+<ul>
+<li><a href="/saving_details">Saving account details</a></li>
+<li><a href="/check_details">Checking account details</a></li>
+<li><a href="/transfer_money">Transfer money</a></li>
+</ul>
+<p>For trasfering money you should know the userId of the person you wnat to
+        trasfer it to and just be sure that the person holds savings or checkin account as per your convinice.
+</p>
+<p>New to your services? No problem, we will help you to set it up.</p>
+<p>Check out <a href="/about">about</a> our services</p>
+<script>
+        const time = new Date().getHours();
+        let greeting;
+        if (time < 10) {
+          greeting = "Good morning";
+        } else if (time < 20) {
+          greeting = "Good day";
+        } else {
+          greeting = "Good evening";
+        }
+        document.getElementById("demo").innerHTML = greeting;
+        </script>
+
+{% endblock %}
