@@ -9,6 +9,6 @@ Amaze pay is a mini bank account. It allow users to signup, and login if they al
 3. Install four libraries: pip install Flask Flask-WTF PyJWT passlib.
 4. Add the environment variable: export FLASK_ENV=development (to enable automatic server restart after code changes)
 
-Inorder to access the email verification services, update the email and password
+Inorder to access the email verification services, update the email and password.
 
 
